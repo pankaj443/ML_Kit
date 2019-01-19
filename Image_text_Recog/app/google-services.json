@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "168468259885",
+    "firebase_url": "https://imagetextrecog.firebaseio.com",
+    "project_id": "imagetextrecog",
+    "storage_bucket": "imagetextrecog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168468259885:android:4bfe1c7431be8c15",
+        "android_client_info": {
+          "package_name": "com.example.pankaj.image_text_recog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168468259885-g1qddkjmpj8d88e1oedr9vfeub148mrq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pankaj.image_text_recog",
+            "certificate_hash": "cb46c36cc741ead2119574d5fa016b0035d5cbe7"
+          }
+        },
+        {
+          "client_id": "168468259885-naour6ic3gfpptq82bn7de578pq1eqq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjJYC8FklLAEKxQ4ZK3EITergxWlXzXE0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168468259885-naour6ic3gfpptq82bn7de578pq1eqq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
