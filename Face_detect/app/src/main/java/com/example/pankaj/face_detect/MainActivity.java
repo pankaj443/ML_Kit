@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageBitmap(bitmap);
                 tempbitmap = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(),Bitmap.Config.RGB_565);
                 canvas = new Canvas(tempbitmap);
-                frame = new Frame.Builder().setBitmap(bitmap).build();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-
+                frame = new Frame.Builder().setBitmap(bitmap).build();
 
                 SparseArray<Face> sparseArray = faceDetector.detect(frame);
 
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     canvas.drawRoundRect(rectF,2,2,paint);
 
                 }
-                imageView.setImageDrawable(new BitmapDrawable(getResources() ,tempbitmap));
+                imageView.setImageBitmap(tempbitmap);
 
 
 

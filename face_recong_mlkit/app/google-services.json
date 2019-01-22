@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "556409445629",
+    "firebase_url": "https://facerecongmlkit.firebaseio.com",
+    "project_id": "facerecongmlkit",
+    "storage_bucket": "facerecongmlkit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556409445629:android:9a25f4612e0c2a53",
+        "android_client_info": {
+          "package_name": "com.example.pankaj.face_recong_mlkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556409445629-qglatfrf0i33r251ihkai8nnj5jum1rt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pankaj.face_recong_mlkit",
+            "certificate_hash": "cb46c36cc741ead2119574d5fa016b0035d5cbe7"
+          }
+        },
+        {
+          "client_id": "556409445629-lk56umi4dl19oj4fu5bjoamjqo74rhqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Ii2XAllwGesqLpMce0BLJfvwAbT-cS8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556409445629-lk56umi4dl19oj4fu5bjoamjqo74rhqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
