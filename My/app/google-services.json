@@ -1,52 +1,82 @@
 {
   "project_info": {
-    "project_number": "881974648300",
-    "firebase_url": "https://myfirebaseproject-6e54f.firebaseio.com",
-    "project_id": "myfirebaseproject-6e54f",
-    "storage_bucket": "myfirebaseproject-6e54f.appspot.com"
+    "project_number": "737891648469",
+    "firebase_url": "https://test-d0e29.firebaseio.com",
+    "project_id": "test-d0e29",
+    "storage_bucket": "test-d0e29.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:881974648300:android:e294512b1d8c524a",
+        "mobilesdk_app_id": "1:737891648469:android:0a5f05f6fe6c935ff6b35c",
+        "android_client_info": {
+          "package_name": "com.example.hack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737891648469-bmgn5s89va667b53lvot5s641r1j3pld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hack",
+            "certificate_hash": "95a321d769c2277c03d14b142d7e32ab1c8d303b"
+          }
+        },
+        {
+          "client_id": "737891648469-fr37ilduio48n14aqba85pd842mo6ulf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClyMphO5Cp7rGmrxtq3jLpKtTdh89suXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737891648469-fr37ilduio48n14aqba85pd842mo6ulf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737891648469:android:ba97b23a02ee580df6b35c",
         "android_client_info": {
           "package_name": "com.example.pankaj.my"
         }
       },
       "oauth_client": [
         {
-          "client_id": "881974648300-g6i92m6s6isii89i284hs2dkil8lucef.apps.googleusercontent.com",
+          "client_id": "737891648469-4esg53l7i55621pg73dgv0u6b1cobl2s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.pankaj.my",
-            "certificate_hash": "cb46c36cc741ead2119574d5fa016b0035d5cbe7"
+            "certificate_hash": "95a321d769c2277c03d14b142d7e32ab1c8d303b"
           }
         },
         {
-          "client_id": "881974648300-m9a21ulnv62dbkho6536uc336a7u6c7c.apps.googleusercontent.com",
+          "client_id": "737891648469-fr37ilduio48n14aqba85pd842mo6ulf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCU89NZr6ZFGDIlND_BMRimAtt1VNRNmbY"
+          "current_key": "AIzaSyClyMphO5Cp7rGmrxtq3jLpKtTdh89suXY"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "881974648300-m9a21ulnv62dbkho6536uc336a7u6c7c.apps.googleusercontent.com",
+              "client_id": "737891648469-fr37ilduio48n14aqba85pd842mo6ulf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
