@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">My</string>
+    <string name="learneng">Parts of Speech: Adjective \n\n
+An adjective is a word that is used to add something to the meaning of a noun. it adds quality to a noun, or a pronoun. For instance;
+ \n\n
+She is a brave girl\n
+The dog is lazy.\n
+Kabir gave me five apples.\n
+Some cats like cold water.\n
+This car is faster than others.\n
+Which way shall we go?\n
+There are different types of adjectives.\n
+ \n\n
+Descriptive adjectives\n
+Numerical adjectives\n
+Quantitative adjectives\n
+Demonstrative adjectives\n
+Interrogative adjectives\n
+Emphasizing adjectives\n
+Exclamatory adjectives\n
+Part of Speech: Pronoun\n
+A pronoun is a word used instead of a noun or phrase in order to avoid its repetition. For instance,
+ \n\n
+The oranges is where you left them.\n
+I then hurt myself.\n
+These shirts are mine.\n
+The climate of Delhi is like that of Jaipur.\n
+Do good to others.\n
+Any fool can do that.\n
+They respected one another.\n
+What is it all about?\n
+I asked who was farting?\n
+Parts of Speech: The Verb\n
+A verb is a word that is used to express a state or an action. Hence, it is also considered a doing word. For instance;
+ \n\n
+Delhi is a big city.\n
+Gold and silver are useful metals.\n
+He spoke the truth.\n
+He enjoys good health.\n
+He burnt with shame.\n
+Parts of Speech: An Adverb\n
+A pronoun is a word that adds something to the meaning of a verb, adjective, or even another adverb and other parts of speech, except nouns and pronoun. For instance;
+ \n\n
+She worked the problem quickly.\n
+A dark little boy sat under a bridge.\n
+Govinda reads quite clearly.\n
+She was agreeable disappointed. \n\n</string>
+
+    <string name="learnhin">1. गोपियों द्वारा उद्धव को भाग्यवान कहने में क्या व्यंग्य निहित है ?\n\n
+उत्तर:- गोपियों द्वारा उद्धव को भाग्यवान कहने में यह व्यंग्य निहित है कि उद्धव वास्तव में भाग्यवान न होकर अति भाग्यहीन हैं। वे श्री कृष्ण के सानिध्य में रहते हुए भी वे श्री कृष्ण के प्रेम से सर्वथा मुक्त रहे। श्री कृष्ण के प्रति कैसे उनके हृदय में अनुराग उत्पन्न नहीं हुआ? अर्थात् श्री कृष्ण के साथ कोई व्यक्ति एक क्षण भी व्यतीत कर ले तो वह कृष्णमय हो जाता है। वे प्रेम बंधन में बँधने एवं मन के प्रेम में अनुरक्त होने की सुखद अनुभूति से पूर्णतया अपरिचित हैं।\n
+\n\n
+2. उद्धव के व्यवहार की तुलना किस-किस से की गई है ?\n\n
+उत्तर:- गोपियों ने उद्धव के व्यवहार की तुलना निम्नलिखित उदाहरणों से की हैं\n
+1) गोपियों ने उद्धव के व्यवहार की तुलना कमल के पत्ते से की हैं जो नदी के जल में रहते हुए भी जल की ऊपरी सतह पर ही रहता है। अर्थात् जल में रहते हुए भी जल का प्रभाव उस पर नहीं पड़ता। उसी प्रकार श्रीकृष्ण का सानिध्य पाकर भी उनका प्रभाव उद्धव पर नहीं पड़ा।\n
+2) उद्धव जल के मध्य रखे तेल के गागर (मटके) की भाँति हैं, जिस पर जल की एक बूँद भी टिक नहीं पाती। इसलिए उद्धव श्रीकृष्ण के समीप रहते हुए भी उनके रूप के आकर्षण तथा प्रेम-बंधन से सर्वथा मुक्त हैं।\n
+3) उद्धव ने गोपियों को जो योग का उपदेश दिया था, उसके बारे में उनका यह कहना है कि यह योग सुनते ही कड़वी ककड़ी के सामान प्रतीत होता है। इसे निगला नहीं जा सकता। यह अत्यंत अरूचिकर है।</string>
 </resources>

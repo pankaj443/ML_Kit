@@ -3,6 +3,7 @@ package com.example.pankaj.my;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,12 +37,17 @@ import com.google.firebase.ml.vision.label.FirebaseVisionImageLabel;
 import com.google.firebase.ml.vision.label.FirebaseVisionImageLabeler;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView;
@@ -49,24 +55,14 @@ public class MainActivity extends AppCompatActivity {
     Button button2;
     //TextView textView;
     Bitmap bitmap;
-
+    String language,roll;
+    String temp;
+    FirebaseTranslator englishGermanTranslator;
+    FirebaseTranslator englishGermanTranslator2;
     ArrayAdapter adapter;
     ArrayList<String> mobileArray = new ArrayList<>();
     ArrayList<Integer> fla = new ArrayList<>();
     int j=0;
-    FirebaseTranslatorOptions options =
-            new FirebaseTranslatorOptions.Builder()
-                    .setSourceLanguage(FirebaseTranslateLanguage.EN)
-                    .setTargetLanguage(FirebaseTranslateLanguage.TA)
-                    .build();
-    final FirebaseTranslator englishGermanTranslator = FirebaseNaturalLanguage.getInstance().getTranslator(options);
-
-    FirebaseTranslatorOptions options2 =
-            new FirebaseTranslatorOptions.Builder()
-                    .setSourceLanguage(FirebaseTranslateLanguage.TA)
-                    .setTargetLanguage(FirebaseTranslateLanguage.EN)
-                    .build();
-    final FirebaseTranslator englishGermanTranslator2 = FirebaseNaturalLanguage.getInstance().getTranslator(options2);
     //String text = "hello";
 
 
@@ -91,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
       });
 
 
+      Intent intent = getIntent();
+        roll = intent.getStringExtra("roll");
+        language= intent.getStringExtra("language");
+
+        getLangCode(language);
+
           adapter = new ArrayAdapter<String>(this,
                 R.layout.activity_listview, mobileArray);
 
@@ -102,6 +104,15 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
               //  Toast.makeText(MainActivity.this, , Toast.LENGTH_SHORT).show();
                 starttranslate(mobileArray.get(i),i,fla.get(i));
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                new CallbackTask().execute(dictionaryEntries(mobileArray.get(i)));
+
+                return false;
             }
         });
 //      textView.setOnClickListener(new View.OnClickListener() {
@@ -177,39 +188,23 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-        FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder()
-              .build();
-        englishGermanTranslator.downloadModelIfNeeded(conditions)
-                .addOnSuccessListener(
-                        new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void v) {
-                                // Model downloaded successfully. Okay to start translating.
-                                // (Set a flag, unhide the translation UI, etc.)
-                                //flag[0] = 1;
-                                Log.i("MSGNM","Model downloaded successfully. Okay to start translating.");
-                                //starttranslate();
 
-
-                               // Toast.makeText(MainActivity.this, "Model downloaded successfully. Okay to start translating.", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                .addOnFailureListener(
-                        new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Model couldn’t be downloaded or other internal error.
-                                // ...
-                                 Log.i("MSGNM","fail");
-                            }
-                        });
-
-     //   Log.i("MSGNM", String.valueOf(flag[0]));
-//       if(flag[0] == 1){
 //
 
 
         }
+
+
+
+
+    private String dictionaryEntries(String wordd) {
+        final String language = "en-gb";
+        final String word = wordd;
+        final String fields = "definitions";
+        final String strictMatch = "false";
+        final String word_id = word.toLowerCase();
+        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id + "?" + "fields=" + fields + "&strictMatch=" + strictMatch;
+    }
 
     private void starttranslate(String s, final int i,int flag) {
 
@@ -270,6 +265,114 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(intent,1);
+    }
+
+    private void  getLangCode(String language){
+        int langCode;
+        switch (language){
+            case "Hindi":
+               langCode =FirebaseTranslateLanguage.HI;break;
+            case "English":
+                langCode =FirebaseTranslateLanguage.EN;break;
+            case "Tamil":
+                langCode =FirebaseTranslateLanguage.TA;break;
+
+            default:
+                langCode=0;
+        }
+        trans(langCode);
+    }
+    private void  trans(int langCode){
+
+        FirebaseTranslatorOptions options =
+                new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(FirebaseTranslateLanguage.EN)
+                        .setTargetLanguage(langCode)
+                        .build();
+        englishGermanTranslator = FirebaseNaturalLanguage.getInstance().getTranslator(options);
+
+        FirebaseTranslatorOptions options2 =
+                new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode)
+                        .setTargetLanguage(FirebaseTranslateLanguage.EN)
+                        .build();
+        englishGermanTranslator2 = FirebaseNaturalLanguage.getInstance().getTranslator(options2);
+
+        FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder()
+                .build();
+        englishGermanTranslator.downloadModelIfNeeded(conditions)
+                .addOnSuccessListener(
+                        new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void v) {
+                                // Model downloaded successfully. Okay to start translating.
+                                // (Set a flag, unhide the translation UI, etc.)
+                                //flag[0] = 1;
+                                Log.i("MSGNM","Model downloaded successfully. Okay to start translating.");
+                                //starttranslate();
+
+
+                                // Toast.makeText(MainActivity.this, "Model downloaded successfully. Okay to start translating.", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                .addOnFailureListener(
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Model couldn’t be downloaded or other internal error.
+                                // ...
+                                Log.i("MSGNM","fail");
+                            }
+                        });
+
+        //   Log.i("MSGNM", String.valueOf(flag[0]));
+//       if(flag[0] == 1){
+    }
+
+
+    private class CallbackTask extends AsyncTask<String, Integer, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            //TODO: replace with your own app id and app key
+            final String app_id = "15dba7db";
+            final String app_key = "347cfed8a5af33817ff5ec88203b8c66";
+            try {
+                URL url = new URL(params[0]);
+                HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+                urlConnection.setRequestProperty("Accept","application/json");
+                urlConnection.setRequestProperty("app_id",app_id);
+                urlConnection.setRequestProperty("app_key",app_key);
+
+                // read the output from the server
+                BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                StringBuilder stringBuilder = new StringBuilder();
+
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line + "\n");
+                }
+
+                return stringBuilder.toString();
+
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                return e.toString();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            Intent intent = new Intent(getApplicationContext(),DictActivity.class);
+            intent.putExtra("definition",result);
+            intent.putExtra("roll",roll);
+            intent.putExtra("language",language);
+            startActivity(intent);
+            System.out.println(result);
+        }
     }
 
     @Override

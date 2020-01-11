@@ -11,19 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".learn"></activity>
+        <activity android:name=".StudentResult" />
+        <activity android:name=".StuAttendence" />
+        <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DictActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
                 android:value="label" />
-
-
         </activity>
     </application>
 

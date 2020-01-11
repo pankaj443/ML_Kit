@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:layout_marginBottom="124dp"
-        android:text="SCAN AND LEARN"
+        android:text="Photo learn"
         app:layout_constraintBottom_toBottomOf="@+id/result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
